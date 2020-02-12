@@ -1,13 +1,22 @@
-// Business Logic - AddressBook -------------------------------
+// Business Logic: AddressBook -------------------------------
 function AddressBook() {
   this.contacts = [];
 }
 
+AddressBook.prototype.addContact = function(contact) {
+  this.contacts.push(contact);
+}
 
-// Business Logic - Contacts ----------------------------------
+// Business Logic: Contacts ----------------------------------
+function Contact(firstName, lastName, phoneNumber) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.phoneNumber = phoneNumber;
+}
 
-
-
+Contact.prototype.fullName = function() {
+  return `${this.firstName} ${this.lastName}`;
+}
 
 //UI Logic ----------------------------------------------------
 $(document).ready(function() {
@@ -15,6 +24,7 @@ $(document).ready(function() {
   //let userName = prompt(`To create a new address book, please enter your first name:`);
   let userName = "Winter";
   $("span#userName").append(`${userName}'s `);
+
 
   $("form#new-contact").submit(function(event) {
     let firstName = $("#firstName").val();

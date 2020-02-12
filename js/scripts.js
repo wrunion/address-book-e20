@@ -79,11 +79,12 @@ function attachContactListeners() {
 
 $(document).ready(function() {
     attachContactListeners();
+
     $("form#new-contact").submit(function(event) {
         event.preventDefault();
-        var inputtedFirstName = $("input#new-first-name").val();
-        var inputtedLastName = $("input#new-last-name").val();
-        var inputtedPhoneNumber = $("input#new-phone-number").val();
+        var inputtedFirstName = $("input#firstName").val();
+        var inputtedLastName = $("input#lastName").val();
+        var inputtedPhoneNumber = $("input#phoneNumber").val();
         var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
         wintersAddressBook.addContact(newContact);
         displayContactDetails(wintersAddressBook);
