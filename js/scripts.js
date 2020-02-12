@@ -40,6 +40,20 @@ Contact.prototype.fullName = function() {
 let testBook = new AddressBook();
 var testContact = new Contact("Ada","Lovelace","503-555-1111");
 var testContact2 = new Contact("Ada","Lovelace","503-555-1111");
-// ​var testContact2 = new Contact("Ada","Lovelace","503-555-1111");
-// ​var testContact2 = new Contact("Ada","Lovelace","503-555-1111");
-// ​
+
+
+// ------------------ User Interface Logic ------------------
+
+var wintersAddressBook = new AddressBook();
+
+$(document).ready(function() {
+    $("form#new-contact").submit(function(event) {
+        event.preventDefault();
+        var inputtedFirstName = $("input#new-first-name").val();
+        var inputtedLastName = $("input#new-last-name").val();
+        var inputtedPhoneNumber = $("input#new-phone-number").val();
+        var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+        wintersAddressBook.addContact(newContact);
+        console.log(wintersAddressBook.contacts);
+    });
+});

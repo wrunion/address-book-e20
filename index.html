@@ -7,26 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- Change this -->
-  <title>Your Site Title Here</title>
+  <title>Winter's Address Book</title>
 
-  <!-- Bootstrap CDN -->
-  
-  <!-- DELETE THE CODE BELOW IF you want to use Semantic UI instead of Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-  <!-- Semantic UI -->
-  <!-- COMMENT IN THE CODE BELOW IF you want to use Semantic UI instead of Bootstrap -->
-
-  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet" type="text/css">
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
--->
+
 
   <!-- Your custom scripts & stylesheet -->
   <script src="js/scripts.js"></script>
@@ -35,7 +21,37 @@
 </head>
 <body>
  <!-- Do your thing!  -->
+  <h1 class="ui header blue">Address Book</h1>
+  <h2 class="ui header teal">Add a Contact:</h2>
+  <form id="new-contact" class="ui form">
+    <div class="four fields">
+      <div class="field">
+        <label for="new-first-name">First Name</label>
+        <input type="text" id="new-first-name" value="Jane">
+      </div>
+      <div class="field">
+        <label for="new-last-name">Last Name</label>
+        <input type="text" id="new-last-name" value="Smith">
+      </div>
+      <div class="field">
+        <label for="new-phone-number">Phone number</label>
+        <input type="text" id="new-phone-number" value="555-555-2211">
+      </div>
+    </div>
+      <button class="ui basic violet button" type="submit">Add</button>
+  </form>
 
+  <h2 class="ui blue header hidden-start">Contacts:</h2>
+  <ul id="contacts">
+  </ul>
+
+  <div id="show-contact">
+    <p>First Name: <span class="first-name"></span></p>
+    <p>Last Name: <span class="last-name"></span></p>
+    <p>Phone Number: <span class="phone-number"></span></p>
+    <div id="buttons">
+    </div>
+  </div>
  
 </body>
 </html>
