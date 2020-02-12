@@ -15,38 +15,37 @@
 
 
   <!-- Your custom scripts & stylesheet -->
-  <script src="js/scripts.js"></script>
+  <script src="js/scripts2.js"></script>
   <link href="css/styles.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
  <!-- Do your thing!  -->
-  <h1 class="ui header blue">Address Book</h1>
-  <h2 class="ui header teal">Add a Contact:</h2>
+ <div class="ui container" id="main">
+  <h1 class="ui header violet">Address Book
+    <div class="sub header">An exercise in constructor functions for Epicodus class of 2020</div>
+  </h1>
+  <h2 class="ui header blue">Add a Contact:</h2>
   <form id="new-contact" class="ui form">
     <div class="four fields">
       <div class="field">
-        <label for="new-first-name">First Name</label>
-        <input type="text" id="new-first-name" value="Jane">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" value="Jane">
       </div>
       <div class="field">
-        <label for="new-last-name">Last Name</label>
-        <input type="text" id="new-last-name" value="Smith">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" value="Smith">
       </div>
       <div class="field">
-        <label for="new-phone-number">Phone number</label>
-        <input type="text" id="new-phone-number" value="555-555-2211">
+        <label for="phoneNumber">Phone number</label>
+        <input type="text" id="phoneNumber" value="555-555-2211">
       </div>
     </div>
       <button class="ui basic blue button" type="submit">Add</button>
   </form>
 
-  <h2 class="ui blue header hidden-start">Contacts:</h2>
+  <h2 class="ui pink header hidden-start">Contacts:</h2>
   <ul id="contacts">
-  </ul>
-
-  <h2 class="ui blue header hidden-start">Phone Numbers:</h2>
-  <ul id="phoneNumbers">
   </ul>
 
   <div id="show-contact">
@@ -57,5 +56,6 @@
     </div>
   </div>
  
+</div>
 </body>
 </html>
