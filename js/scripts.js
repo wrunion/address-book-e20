@@ -46,6 +46,25 @@ var testContact2 = new Contact("Ada","Lovelace","503-555-1111");
 
 var wintersAddressBook = new AddressBook();
 
+function displayContactDetails(addressBookToDisplay) {
+    //debugger;
+    let contactsList = $("ul#contacts");
+    let htmlForContactInfo= "";
+    addressBookToDisplay.contacts.forEach(function(contact) {
+        htmlForContactInfo += `<li id=${contact.id}> ${contact.firstName} ${contact.lastName} </li>`;
+    });
+    contactsList.html(htmlForContactInfo);
+}
+
+function displayPhoneNumber(addressBookToDisplay) {
+    let contactsList = $("ul#phoneNumbers");
+    let htmlForPhoneNumber = "";
+    addressBookToDisplay.contacts.forEach(function(contact) {
+        htmlForPhoneNumber += `<li id=${contact.id}> ${contact.phoneNumber} </li>`;
+    });
+    contactsList.html(htmlForPhoneNumber);
+}
+
 $(document).ready(function() {
     $("form#new-contact").submit(function(event) {
         event.preventDefault();
@@ -54,6 +73,8 @@ $(document).ready(function() {
         var inputtedPhoneNumber = $("input#new-phone-number").val();
         var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
         wintersAddressBook.addContact(newContact);
-        console.log(wintersAddressBook.contacts);
+        displayContactDetails(wintersAddressBook);
+        displayPhoneNumber(wintersAddressBook);
     });
+
 });
