@@ -30,21 +30,37 @@
     <div id="signUp" class="ui segment flex-container">
       <form id="newBook">
         <div class="header">
-        <h3>Enter your name to create your own address book!</h3>
-      </div>
+         <h3>Enter your name to create your own address book!</h3>
+        </div>
         <div class="ui fluid input">
-          <input type="text" id="userName" placeholder="First Name" length=25>
+          <input type="text" id="userName" placeholder="First Name" value="Winter">
         </div>
         <div>
-        <button type="button" class="ui fluid basic button violet">Create</button>
+        <button type="submit" class="ui fluid basic button violet">Create</button>
       </div>
       </form>
     </div>
 
     <div class="contacts-content hidden-start" id="content-main">
+
       <div class="ui segment">
-      <h2 class="ui header blue">Add a Contact:</h2>
-      <form id="new-contact" class="ui form">
+        <h2 class="ui pink header"><span id ="userName-span"></span>Contacts:</h2>
+        <ul id="contacts">
+        </ul>
+  
+        <div id="show-contact">
+          <p>First Name: <span class="first-name"></span></p>
+          <p>Last Name: <span class="last-name"></span></p>
+          <p>Phone Number: <span class="phone-number"></span></p>
+        </div>
+        <div id="buttons">
+          <!-- To do  -->
+        </div>
+      </div>
+      
+      <div class="ui segment">
+        <h2 class="ui header blue">Add a Contact:</h2>
+        <form id="new-contact" class="ui form">
         <div class="four fields">
           <div class="field">
             <label for="firstName">First Name</label>
@@ -63,17 +79,8 @@
       </form>
     </div>
   
-    <div class="ui segment">
-      <h2 class="ui pink header hidden-start"><span id ="user-name"></span>Contacts:</h2>
-      <ul id="contacts">
-      </ul>
 
-      <div id="show-contact">
-        <p>First Name: <span class="first-name"></span></p>
-        <p>Last Name: <span class="last-name"></span></p>
-        <p>Phone Number: <span class="phone-number"></span></p>
-        <div id="buttons">
-        </div>
+
       </div>
     </div>
   </div>  

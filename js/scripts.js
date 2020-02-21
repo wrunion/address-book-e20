@@ -50,8 +50,8 @@ class Contact {
 }
 
 // UI Logic ------------------------
-
-let wintersAddressBook = new AddressBook();
+// let addressBooks = {};
+// let wintersAddressBook = new AddressBook();
 
 function displayContacts(bookName) {
 let display = $("ul#contacts");
@@ -63,13 +63,33 @@ display.html(displayHTML);
 }
 
 function attachContactListeners() {
-  $("ul#contacts").on("click", "li", function() {
+  $("ul#contacts").on("click", "li", function(){
       console.log("The id of this <li> is " + this.id + ".");
   });
 };
 
+let addressBooks = {};
+let userName;
 
 $(document).ready(function() {
+  $("form#newBook").submit(function(event) {
+    // Get username from form
+    let name = $("input#userName").val();
+    // Append it to the (currently hidden) contact output span
+    $("#userName-span").append(`${name}'s `);
+    // Save it to a global variable
+    userName = name;
+    // Create a new address book unique to this user
+    addressBooks[name] = new AddressBook(name);
+    console.log(addressBooks);
+    // --- SHOW HIDE
+    $("#signUp").hide();
+    $("#content-main").show();
+    event.preventDefault();
+  });
+
+  //userName = (Object.keys(addressBooks)).toString().toLowerCase();
+
   attachContactListeners();
 
   $("form#new-contact").submit(function(event) {
@@ -81,8 +101,8 @@ $(document).ready(function() {
 
       // Create new contact & push it to the working address book
       let newContact = new Contact(firstName, lastName, phoneNumber);
-      wintersAddressBook.addContact(newContact);
-      displayContacts(wintersAddressBook);
+      addressBooks[userName].addContact(newContact);
+      displayContacts(addressBooks[userName]);
   });
 
 });
