@@ -53,14 +53,23 @@ class Contact {
 // let addressBooks = {};
 // let wintersAddressBook = new AddressBook();
 
+// function displayContacts(bookName) {
+// let display = $("ul#contacts");
+// let displayHTML = "";
+// bookName.contacts.forEach(function(contact) {
+//   displayHTML += `<li id=${contact.id}>${contact.firstName} ${contact.lastName}</li> <button id="displayAll" class="ui basic blue button mini">Show Details</button> <button class="deleteContact">Delete</button>`;
+// });
+// display.html(displayHTML);
+// }
+
 function displayContacts(bookName) {
-let display = $("ul#contacts");
-let displayHTML = "";
-bookName.contacts.forEach(function(contact) {
-  displayHTML += `<li id=${contact.id}>${contact.firstName} ${contact.lastName}</li> <button class="displayAll">Show Details</button> <button class="deleteContact">Delete</button>`;
-});
-display.html(displayHTML);
-}
+  let display = $("#contacts");
+  let displayHTML = "";
+  bookName.contacts.forEach(function(contact) {
+    displayHTML += `<div id=${contact.id} class="item">${contact.firstName} ${contact.lastName} <button id="displayAll" class="ui basic blue button mini">Details</button> <button id="deleteContact" class="ui basic pink button mini">Delete</button></div>`;
+  });
+  display.html(displayHTML);
+  }
 
 function attachContactListeners() {
   $("ul#contacts").on("click", "li", function(){
@@ -76,7 +85,7 @@ $(document).ready(function() {
     // Get username from form
     let name = $("input#userName").val();
     // Append it to the (currently hidden) contact output span
-    $("#userName-span").append(`${name}'s `);
+    $(".user-name").append(`${name}'s `);
     // Save it to a global variable
     userName = name;
     // Create a new address book unique to this user
@@ -106,36 +115,3 @@ $(document).ready(function() {
   });
 
 });
-
-//product needs discovery phase
-
-// $(document).ready(function() {
-//     attachContactListeners();
-//     //Ask the user for their name and create a new AddressBook object unique to them. Append the "Conacts" display header with their name as well
-//     //let userName = prompt(`To create a new address book, please enter your first name:`);
-
-//     //Create a placeholder username for testing
-//     let userName = "Winter";
-//     $("span#user-name").append(`${userName}'s `);
-
-//     //NOTE: the below code doesn't work. come back to it.
-//     //let bookname = userName.toLowerCase() + "sAddressBook";
-//     // let newBookName = `${userName.toLowerCase()}sAddressBook`;
-//     // this[newBookName] = new AddressBook;
-//     $("form#new-contact").submit(function(event) {
-//       let firstName = $("#firstName").val();
-//       //console.log(firstName);
-//       let lastName = $("#lastName").val();
-//       //console.log(lastName);
-//       let phone = $("#phoneNumber").val();
-//       //console.log(phone);
-
-//       let currentContact = new Contact(firstName, lastName, phone);
-
-//       currentBook.addContact(currentContact);
-//       console.log(currentBook);
-//       displayContacts(currentBook);
-//       event.preventDefault();
-//     });
-
-//   });
