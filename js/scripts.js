@@ -50,9 +50,8 @@ class Contact {
 }
 
 // UI Logic ------------------------
-// let addressBooks = {};
-// let wintersAddressBook = new AddressBook();
 
+// For using ul and lis : 
 // function displayContacts(bookName) {
 // let display = $("ul#contacts");
 // let displayHTML = "";
@@ -62,6 +61,7 @@ class Contact {
 // display.html(displayHTML);
 // }
 
+// For using Semantic UI's list display system:
 function displayContacts(bookName) {
   let display = $("#contacts");
   let displayHTML = "";
@@ -81,6 +81,7 @@ let addressBooks = {};
 let userName;
 
 $(document).ready(function() {
+  attachContactListeners();
   $("form#newBook").submit(function(event) {
     // Get username from form
     let name = $("input#userName").val();
@@ -97,10 +98,6 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
-  //userName = (Object.keys(addressBooks)).toString().toLowerCase();
-
-  attachContactListeners();
-
   $("form#new-contact").submit(function(event) {
       event.preventDefault();
       // Grab input from user
@@ -113,5 +110,4 @@ $(document).ready(function() {
       addressBooks[userName].addContact(newContact);
       displayContacts(addressBooks[userName]);
   });
-
 });
