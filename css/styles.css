@@ -5,3 +5,31 @@
 #main {
     margin-top: 1em;
 }
+
+h1, h3 {
+    text-align: center;
+    margin: 1em;
+}
+
+#header {
+    padding: 1em;
+}
+
+.hidden-start {
+  display: none;
+}
+
+#signUp {
+  display: flex;
+  flex-direction: column;
+  align-content: center
+  justify-items: center;
+  height: 15em;
+}
+
+#signUp div {
+  margin: 1em;
+}
+#userName {
+  text-align: center;
+}

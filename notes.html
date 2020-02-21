@@ -1,0 +1,26 @@
+<!-- Notes from Elle  -->
+
+<html>
+<head>
+  <script>
+    let addressBooks = {}
+    function createNewAddressBook() {
+      const name = $('[name="address-book-name"]').val()
+      addressBooks[name] = new AddressBook(name)
+    }
+
+    function AddressBook(name) {
+      this.name = name
+      $('.address-books').append(`<div id="${name}"><h1>${name}</h1><div>other content here</div></div>`)
+    }
+    AddressBook.prototype.addUser() {
+      $(`.address-books #${this.name} .names`).append('blah blah pseudo code')
+    }
+  </script>
+</head>
+<body>
+  <input name="address-book-name" value="" />
+  <button onClick="createNewAddressBook">Create New Address Book</button>
+  <div class="address-books"></div>
+</body>
+</html>
