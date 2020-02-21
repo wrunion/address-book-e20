@@ -22,7 +22,7 @@
 <body>
  <div class="ui container" id="main">
    <div id="header">
-      <h1 class="ui header violet">Address Book
+      <h1 class="ui header violet"><span class="user-name"></span>Address Book
         <div class="sub header">An exercise in classes, prototypes, and constructor functions</div>
       </h1>
     </div>
@@ -44,21 +44,6 @@
     <div class="contacts-content hidden-start" id="content-main">
 
       <div class="ui segment">
-        <h2 class="ui pink header"><span id ="userName-span"></span>Contacts:</h2>
-        <ul id="contacts">
-        </ul>
-  
-        <div id="show-contact">
-          <p>First Name: <span class="first-name"></span></p>
-          <p>Last Name: <span class="last-name"></span></p>
-          <p>Phone Number: <span class="phone-number"></span></p>
-        </div>
-        <div id="buttons">
-          <!-- To do  -->
-        </div>
-      </div>
-      
-      <div class="ui segment">
         <h2 class="ui header blue">Add a Contact:</h2>
         <form id="new-contact" class="ui form">
         <div class="four fields">
@@ -79,7 +64,22 @@
       </form>
     </div>
   
-
+      <div class="ui segment">
+        <h2 class="ui pink header"><span class="user-name"></span>Contacts:</h2>
+        <div class="ui divided list" id="contacts"></div>
+        <!-- <ul id="contacts">
+        </ul> -->
+      </div>
+  
+        <div id="show-contact">
+          <p>First Name: <span class="first-name"></span></p>
+          <p>Last Name: <span class="last-name"></span></p>
+          <p>Phone Number: <span class="phone-number"></span></p>
+        </div>
+        <div id="buttons">
+          <!-- To do  -->
+        </div>
+      </div>
 
       </div>
     </div>
