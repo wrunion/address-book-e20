@@ -15,47 +15,68 @@
 
 
   <!-- Your custom scripts & stylesheet -->
-  <script src="js/scripts2.js"></script>
+  <script src="js/scripts.js"></script>
   <link href="css/styles.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
- <!-- Do your thing!  -->
  <div class="ui container" id="main">
-  <h1 class="ui header violet">Address Book
-    <div class="sub header">An exercise in constructor functions for Epicodus class of 2020</div>
-  </h1>
-  <h2 class="ui header blue">Add a Contact:</h2>
-  <form id="new-contact" class="ui form">
-    <div class="four fields">
-      <div class="field">
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" value="Jane">
-      </div>
-      <div class="field">
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" value="Smith">
-      </div>
-      <div class="field">
-        <label for="phoneNumber">Phone number</label>
-        <input type="text" id="phoneNumber" value="555-555-2211">
-      </div>
+   <div id="header">
+      <h1 class="ui header violet">Address Book
+        <div class="sub header">An exercise in classes, prototypes, and constructor functions</div>
+      </h1>
     </div>
-      <button class="ui basic blue button" type="submit">Add</button>
-  </form>
-  
-  <h2 class="ui pink header hidden-start"><span id ="user-name"></span>Contacts:</h2>
-  <ul id="contacts">
-  </ul>
 
-  <div id="show-contact">
-    <p>First Name: <span class="first-name"></span></p>
-    <p>Last Name: <span class="last-name"></span></p>
-    <p>Phone Number: <span class="phone-number"></span></p>
-    <div id="buttons">
+    <div id="signUp" class="ui segment flex-container">
+      <form id="newBook">
+        <div class="header">
+        <h3>Enter your name to create your own address book!</h3>
+      </div>
+        <div class="ui fluid input">
+          <input type="text" id="userName" placeholder="First Name" length=25>
+        </div>
+        <div>
+        <button type="button" class="ui fluid basic button violet">Create</button>
+      </div>
+      </form>
     </div>
-  </div>
- 
+
+    <div class="contacts-content hidden-start" id="content-main">
+      <div class="ui segment">
+      <h2 class="ui header blue">Add a Contact:</h2>
+      <form id="new-contact" class="ui form">
+        <div class="four fields">
+          <div class="field">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" value="Jane">
+          </div>
+          <div class="field">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" value="Smith">
+          </div>
+          <div class="field">
+            <label for="phoneNumber">Phone number</label>
+            <input type="text" id="phoneNumber" value="555-555-2211">
+          </div>
+        </div>
+          <button class="ui basic blue button" type="submit">Add</button>
+      </form>
+    </div>
+  
+    <div class="ui segment">
+      <h2 class="ui pink header hidden-start"><span id ="user-name"></span>Contacts:</h2>
+      <ul id="contacts">
+      </ul>
+
+      <div id="show-contact">
+        <p>First Name: <span class="first-name"></span></p>
+        <p>Last Name: <span class="last-name"></span></p>
+        <p>Phone Number: <span class="phone-number"></span></p>
+        <div id="buttons">
+        </div>
+      </div>
+    </div>
+  </div>  
 </div>
 </body>
 </html>
